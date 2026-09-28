@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-forno-dark: #121110;
+  --color-forno-card: #1C1A18;
+  --color-forno-border: #2D2A26;
+  --color-forno-flame: #E05330;
+  --color-forno-amber: #D9822B;
+  --color-forno-cream: #EDE8E1;
+  --color-forno-muted: #9E968B;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #121110;
+  color: #EDE8E1;
+}
+
+h1, h2, h3, .font-serif-title {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171513;
+}
+::-webkit-scrollbar-thumb {
+  background: #332F2B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A443E;
+}
+
+/* Infinite Marquee Animation for Dishes Carousel */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
+
+/* WISA-style italic shaping */
+.italic-shaping {
+  font-style: italic;
+  transform: skewX(-2deg);
+}
+
+/* Distressed / Rustic Woodblock font styles (from home2.png) */
+.font-distressed-headline {
+  font-family: 'Rubik Dirt', 'Rye', 'Alfa Slab One', serif;
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95), 0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+.font-distressed-sub {
+  font-family: 'Rye', 'Rubik Dirt', 'Alfa Slab One', serif;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+/* Button pulse & shimmer animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(229, 36, 33, 0.65);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 18px rgba(229, 36, 33, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(229, 36, 33, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-ring 2.2s infinite ease-in-out;
+}
+
+@keyframes sweep-shine {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  30%, 100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+.animate-sweep-shine {
+  animation: sweep-shine 3s infinite ease-in-out;
+}
+
+/* ========================================================= */
+/* Floating Label Input Group (From Uiverse.io by Maximinodotpy) */
+/* ========================================================= */
+.inputGroup {
+  font-family: inherit;
+  margin: 0.65em 0;
+  position: relative;
+  width: 100%;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+  font-size: 0.95rem;
+  padding: 0.9em 1.2em;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background-color: #201D1A;
+  border-radius: 20px;
+  width: 100%;
+  color: #EDE8E1;
+  transition: all 0.3s ease;
+}
+
+.inputGroup label {
+  font-size: 0.88rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.9em 1.2em;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #A8A29E;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.inputGroup :is(input:focus, input:not(:placeholder-shown), textarea:focus, textarea:not(:placeholder-shown), select:focus, select:valid) ~ label {
+  transform: translateY(-50%) scale(0.85);
+  margin-left: 1.2em;
+  padding: 0.2em 0.65em;
+  background-color: #181614;
+  color: #F9BA15;
+  border-radius: 9999px;
+  border: 1px solid rgba(249, 186, 21, 0.35);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.inputGroup :is(input:focus, textarea:focus, select:focus) {
+  border-color: #E52421;
+  background-color: #24201C;
+  box-shadow: 0 0 20px rgba(229, 36, 33, 0.25);
+}
+
+.inputGroup :is(input:valid:not(:focus), textarea:valid:not(:focus)) {
+  border-color: rgba(229, 36, 33, 0.35);
+}
+
+/* Mobile Optimizations for Input Groups & Touch Targets */
+@media (max-width: 640px) {
+  .inputGroup input,
+  .inputGroup textarea,
+  .inputGroup select {
+    font-size: 16px !important; /* 16px strictly prevents iOS Safari viewport auto-zoom */
+    padding: 0.85em 1em;
+    border-radius: 16px;
+  }
+  .inputGroup label {
+    font-size: 0.85rem;
+    padding: 0.85em 1em;
+  }
+  .inputGroup :is(input:focus, input:not(:placeholder-shown), textarea:focus, textarea:not(:placeholder-shown), select:focus, select:valid) ~ label {
+    font-size: 0.72rem;
+    padding: 0.15em 0.5em;
+    margin-left: 0.8em;
+  }
+}
+
+/* ========================================================= */
+/* Custom Pizza Mouse Cursors (from mouse.png)                */
+/* ========================================================= */
+html, body {
+  cursor: url('/cursor-pizza-slice.png') 3 3, url('/cursor-pizza-slice.svg') 3 3, auto;
+}
+
+/* Hover & Pointer on interactive elements */
+button,
+a,
+input,
+select,
+textarea,
+label,
+[role="button"],
+.cursor-pointer,
+summary,
+[tabindex]:not([tabindex="-1"]) {
+  cursor: url('/cursor-pizza-hover.png') 16 16, url('/cursor-pizza-hover.svg') 16 16, pointer !important;
+}
+
+button:active,
+a:active,
+[role="button"]:active,
+.cursor-pointer:active {
+  cursor: url('/cursor-pizza-hover.png') 16 16, pointer !important;
+}

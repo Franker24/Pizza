@@ -1,0 +1,6 @@
+{
+  "name": "FORNO - Pizzería Artesanal",
+  "description": "Pizzería artesanal y restaurante en Buenos Aires. Masa de fermentación lenta, ingredientes reales, fuego y coctelería contemporánea.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
