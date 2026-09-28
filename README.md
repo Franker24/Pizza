@@ -90,7 +90,7 @@ pizzeria/
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/pizzeria.git
+   git clone https://github.com/Franker24/Pizza.git
    cd pizzeria
    ```
 
@@ -118,47 +118,12 @@ pizzeria/
 
 Cuando desees subir el código a tu repositorio de GitHub:
 
-1. **Crear un nuevo repositorio en GitHub** (ej. `pizzeria-web`).
-2. **Inicializar y subir desde la terminal**:
+1. **Inicializar y subir desde la terminal**:
    ```bash
    git init
    git add .
-   git commit -m "feat: Versión inicial La Pizzeatería con sucursales y checkout"
+   git commit -m "docs: actualizar README"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/pizzeria.git
+   git remote add origin git@github.com:Franker24/Pizza.git
    git push -u origin main
    ```
-
----
-
-## ⚡ Despliegue en Vercel
-
-El proyecto cuenta con `vercel.json` ya preconfigurado para manejar el enrutamiento SPA (`react-router-dom`).
-
-### Opción A: Despliegue mediante GitHub (Recomendado)
-1. Subí tu proyecto a GitHub como se indica en la sección anterior.
-2. Ingresá a [Vercel](https://vercel.com/) e inicia sesión con tu cuenta.
-3. Haz clic en **"Add New" ➔ "Project"** y selecciona tu repositorio de GitHub.
-4. En **Framework Preset**, Vercel detectará automáticamente **Vite**.
-5. *(Opcional)* En **Environment Variables**, añade:
-   - `VITE_GEMINI_API_KEY` = *tu_api_key_de_gemini*
-6. Haz clic en **Deploy**. ¡En menos de 1 minuto tu app estará publicada en una URL tipo `https://tu-pizzeria.vercel.app`!
-
-### Opción B: Despliegue con Vercel CLI
-```bash
-pnpm install -g vercel
-vercel login
-vercel
-```
-
----
-
-## 📄 Licencia
-
-Este proyecto está desarrollado bajo la licencia MIT. Libre para uso personal y comercial.
-
----
-
-<div align="center">
-  <sub>Desarrollado con ❤️ para los amantes de la pizza artesanal.</sub>
-</div>
