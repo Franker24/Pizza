@@ -111,19 +111,3 @@ pizzeria/
    pnpm dev
    ```
    La aplicación se abrirá en `http://localhost:3000`.
-
----
-
-## 📤 Subir el Proyecto a GitHub
-
-Cuando desees subir el código a tu repositorio de GitHub:
-
-1. **Inicializar y subir desde la terminal**:
-   ```bash
-   git init
-   git add .
-   git commit -m "docs: actualizar README"
-   git branch -M main
-   git remote add origin git@github.com:Franker24/Pizza.git
-   git push -u origin main
-   ```
